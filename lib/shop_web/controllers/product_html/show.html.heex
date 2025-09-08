@@ -1,4 +1,17 @@
 <Layouts.app flash={@flash}>
   <h1>Product Show Page</h1>
-  <p>Showing product details for product where ID: <%= @id %></p>
+
+  <%= if @product do %>
+    <.product title={@product.title} price={@product.price} console={@product.console} />
+  <% else %>
+    <p class="font-bold text-3xl">Product not found</p>
+  <% end %>
+
+  <btn class="mt-20 px-2 py-2 bg-blue-400 rounded-md">
+    <a href={~p"/products"}>Back to Products</a>
+  </btn>
+
+  <.button>
+    Click me
+  </.button>
 </Layouts.app>

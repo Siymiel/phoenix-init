@@ -1,4 +1,12 @@
 <Layouts.app flash={@flash}>
-  <h1>Products</h1>
-  <p>List of products will go here.</p>
+  <h1>Product Listing</h1>
+
+  <%= for product <- @products do %>
+    <div class="bg-gray-200 p-2 m-2 rounded-md hover:scale-105 transition-all duration-200 ease-in-out hover:bg-gray-300">
+      <a href={~p"/products/#{product.id}"}>
+        <.product title={product.title} price={product.price} console={product.console} />
+      </a>
+    </div>
+  <% end %>
 </Layouts.app>
+s
